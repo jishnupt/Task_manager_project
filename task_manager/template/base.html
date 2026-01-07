@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/base.css">
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <a href=""><button>Home</button></a>
+            <a href="{% url 'Login_page' %}"><button>Login</button></a>
+            <a href="{% url 'UserRegister' %}"><button>Register</button></a>
+            <a href=""><button>Logout</button></a>
+
+        </div>
+        <div class="content">
+            {%block contents%}
+            {%endblock%}
+
+        </div>
+        <div class="footer">
+            <p>@task_manager</p>
+        </div>
+    </div>
+    
+</body>
+</html>
