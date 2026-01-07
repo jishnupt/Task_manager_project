@@ -9,10 +9,16 @@
 <body>
     <div class="main">
         <div class="header">
-            <a href=""><button>Home</button></a>
+            <div class="logo">
+                <img src="/static/images/Logo_tsk01.png" alt="" width="120px" height="50px">
+            </div>
+            {% if user.is_authenticated %}
+            <p id="b3">{{request.user}}</p>
+            {% endif %}
+            <a href="{% url 'homepage' %}"><button>Home</button></a>
             <a href="{% url 'Login_page' %}"><button>Login</button></a>
             <a href="{% url 'UserRegister' %}"><button>Register</button></a>
-            <a href=""><button>Logout</button></a>
+            <a href="{% url 'Logout_page' %}"><button>Logout</button></a>
 
         </div>
         <div class="content">

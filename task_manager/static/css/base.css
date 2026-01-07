@@ -6,8 +6,8 @@
 }
 
 body {
-    background-color: #f8fafc;
-    color: #0f172a;
+    background: #f8fafc;
+    color: #1e293b;
 }
 
 .main {
@@ -17,79 +17,90 @@ body {
 }
 
 .header {
-    background: linear-gradient(135deg, #2563eb, #1e40af);
-    padding: 15px 150px;
     display: flex;
-    justify-content: flex-end;
     align-items: center;
-    gap: 15px;
+    justify-content: space-between;
+    padding: 14px 40px;
+    background: #0f172a;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    flex-wrap: wrap;
+}
+
+.logo img {
+    object-fit: contain;
 }
 
 .header a {
     text-decoration: none;
+    margin-left: 12px;
 }
 
 .header button {
-    background-color: transparent;
-    border: 2px solid #ffffff;
-    color: #ffffff;
+    background: transparent;
+    color: #e5e7eb;
+    border: 2px solid transparent;
     padding: 8px 18px;
     font-size: 15px;
-    font-weight: 600;
-    border-radius: 25px;
+    font-weight: 500;
+    border-radius: 6px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .header button:hover {
-    background-color: #ffffff;
-    color: #1e40af;
-    transform: translateY(-2px);
+    background: #2563eb;
+    border-color: #2563eb;
+    color: #ffffff;
+    transform: translateY(-1px);
 }
 
 .content {
     flex: 1;
-    padding: 40px 20px;
-    max-width: 1200px;
-    margin: auto;
+    padding: 40px 60px;
+    background: #f1f5f9;
 }
 
 .footer {
-    background-color: #0f172a;
+    background: #0f172a;
     color: #cbd5f5;
     text-align: center;
-    padding: 15px;
+    padding: 12px 0;
     font-size: 14px;
 }
+#b3{
+    color: white;
+}
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .header {
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 10px;
-        padding: 15px;
-    }
-
-    .header button {
-        font-size: 14px;
-        padding: 7px 15px;
+        padding: 14px 20px;
     }
 
     .content {
-        padding: 25px 15px;
+        padding: 30px;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
     .header {
         flex-direction: column;
-        align-items: stretch;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .header a {
+        margin-left: 0;
+        width: 100%;
     }
 
     .header button {
         width: 100%;
         text-align: center;
     }
+
+    .content {
+        padding: 20px;
+    }
 }
+
 
