@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .forms import RegisteruserForm
+from .forms import RegisteruserForm,TaskAddForm
 from django.contrib.auth import authenticate,login,logout
 from .models import Task
 # Create your views here.
@@ -45,7 +45,7 @@ def admin_dashbord(request):
     return render(request,'admin_page.html')
 
 def user_dashbord(request):
-    tasks = Task.objects.all()
+    tasks = Task.objects.filter(user=request.user)
     return render(request,'user_page.html',{'tasks':tasks})
 
 def Logout_page(request):
@@ -54,3 +54,15 @@ def Logout_page(request):
         return redirect(homepage)
     else:
         return render(request,'logout.html')
+    
+def TaskAdding(request):
+    if request.method == 'POST':
+        form = TaskAddForm(request.POST,request.FILES)
+        if form.is_valid():
+            data = form.save(commit=False)
+            data.user = request.user
+            data.save()
+            return redirect(homepage)
+    else:
+        form = TaskAddForm()
+    return render(request,'task_adding.html',{'form':form})

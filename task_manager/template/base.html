@@ -14,6 +14,8 @@
             </div>
             {% if user.is_authenticated %}
             <p id="b3">{{request.user}}</p>
+            <a href="{% url 'TaskAdding' %}"><button>Add Task</button></a>
+            <a href="{% url 'user_dashbord' %}"><button>All Added Tasks</button></a>
             {% endif %}
             <a href="{% url 'homepage' %}"><button>Home</button></a>
             <a href="{% url 'Login_page' %}"><button>Login</button></a>
