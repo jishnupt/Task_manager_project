@@ -1,16 +1,45 @@
-{%extends 'base.html'%}
-{%block contents%}
+{% extends 'base.html' %}
+{% block contents %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/static/css/home.css">
 </head>
 <body>
-    <h1>Homepage</h1>
+    <section class="task-hero">
+    <div class="hero-content">
+        <h1>Manage Your Tasks Smarter</h1>
+        <p>Plan, track, and complete your tasks efficiently with our simple task management system.</p>
+        <div class="hero-buttons">
+            <a href="{% url 'UserRegister' %}" class="btn secondary">Create Task</a>
+            <a href="{% url 'UserRegister' %}" class="btn secondary">View Tasks</a>
+        </div>
+    </div>
+</section>
+
+<section class="features">
+    <div class="feature-card">
+        <h3>Create Tasks</h3>
+        <p>Easily add tasks with title, description, and due dates.</p>
+    </div>
+    <div class="feature-card">
+        <h3>Track Progress</h3>
+        <p>Monitor task completion status in real time.</p>
+    </div>
+    <div class="feature-card">
+        <h3>Stay Organized</h3>
+        <p>Keep all your work organized in one place.</p>
+    </div>
+</section>
+    
 </body>
 </html>
-{%endblock%}      
+
+{% endblock %}
+      
 
 

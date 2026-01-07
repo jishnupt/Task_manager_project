@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block contents %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/user_page.css">
+</head>
+<body>
+
+    <div class="task_section">
+    <h1>ALL TASKS</h1>
+
+    <div class="task_box">
+        {% for i in tasks %}
+        <div class="task_card">
+
+            <img src="/home/{{i.image}}" alt="">
+
+            <h4>{{i.name}}</h4>
+
+            <p class="desc">{{i.description}}</p>
+
+            <p class="status">Status : {{i.status}}</p>
+
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+    
+</body>
+</html>
+{% endblock %}
